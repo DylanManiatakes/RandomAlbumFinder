@@ -1,0 +1,120 @@
+/* General Page Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #6a11cb, #2575fc);
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Heading */
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Button Styling */
+button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #ffffff;
+    background-color: #3333cc;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: #5555ff;
+}
+
+/* Album Info Styling */
+#album-info {
+    text-align: center;
+    max-width: 300px;
+    min-height: 450px; /* Ensures enough height for most album art */
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    background-size: contain; /* Ensures the entire image is shown */
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Album and Artist Text */
+#album-title, #artist-name {
+    margin: 0;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+#artist-name {
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Main Content Container */
+#content {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Increase spacing between the boxes */
+    margin-top: 30px;
+    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+}
+
+/* Listen Info Box */
+#listen-info {
+    max-width: 300px;
+    min-height: 450px; /* Match height with album info box */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#listen-info h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+#links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#links-list li {
+    margin: 10px 0;
+    font-size: 1em;
+    word-wrap: break-word;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    #content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #album-info, #listen-info {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Album Finder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <h1>Random Album Finder</h1>
+    <button id="random-button">Find Random Album</button>
+    <div id="content">
+        <div id="album-info">
+            <h2 id="album-title">Album: <span id="album-name">Click the button to find an album!</span></h2>
+            <p id="artist-name">Artist: <span id="artist-text"></span></p>
+        </div>
+        <div id="listen-info">
+            <h3>Where to Listen:</h3>
+            <ul id="links-list">
+                <li>Click the button to find listening options!</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/static/service-worker.js').then(() => {
+                console.log('Service Worker Registered');
+            });
+        }
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
