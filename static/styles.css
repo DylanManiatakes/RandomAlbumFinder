@@ -6,7 +6,7 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,7 +15,7 @@ body {
 
 /* Heading */
 h1 {
-    font-size: 3em;
+    font-size: 2.5em;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
@@ -37,61 +37,51 @@ button:hover {
     background-color: #5555ff;
 }
 
-/* Album Info Styling */
+/* Main Content Container */
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; /* Space between boxes */
+    flex-wrap: wrap; /* Stack elements on smaller screens */
+    margin-top: 20px;
+}
+
+/* Album Info Box */
 #album-info {
-    text-align: center;
+    flex: 1;
     max-width: 300px;
-    min-height: 450px; /* Ensures enough height for most album art */
+    min-height: 400px;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
-    background-size: contain; /* Ensures the entire image is shown */
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-}
-
-/* Album and Artist Text */
-#album-title, #artist-name {
-    margin: 0;
-    font-size: 1.5em;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-}
-
-#artist-name {
-    font-style: italic;
-    margin-top: 10px;
-}
-
-/* Main Content Container */
-#content {
-    display: flex;
-    justify-content: center;
-    gap: 40px; /* Increase spacing between the boxes */
-    margin-top: 30px;
-    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+    text-align: center;
 }
 
 /* Listen Info Box */
 #listen-info {
+    flex: 1;
     max-width: 300px;
-    min-height: 450px; /* Match height with album info box */
     padding: 20px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
-    text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    text-align: left;
 }
 
 #listen-info h3 {
-    margin-bottom: 10px;
     font-size: 1.5em;
+    margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
@@ -107,14 +97,25 @@ button:hover {
     word-wrap: break-word;
 }
 
-/* Responsive Design */
+/* Responsive Design for Smaller Screens */
 @media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 12px 24px;
+    }
+
     #content {
-        flex-direction: column;
+        flex-direction: column; /* Stack elements vertically */
         align-items: center;
     }
 
     #album-info, #listen-info {
         max-width: 100%;
+        min-height: auto;
+        margin-bottom: 20px; /* Add spacing between stacked elements */
     }
 }
