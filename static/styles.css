@@ -9,49 +9,51 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Align items closer to the top */
     align-items: center;
 }
 
 /* Heading */
 h1 {
     font-size: 2.5em;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* Button Styling */
 button {
-    padding: 15px 30px;
-    font-size: 1.2em;
+    padding: 12px 20px;
+    font-size: 1.1em;
     color: #ffffff;
     background-color: #3333cc;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px; /* Add spacing below button */
 }
 
 button:hover {
     background-color: #5555ff;
+    transform: scale(1.05);
 }
 
 /* Main Content Container */
 #content {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px; /* Space between boxes */
-    flex-wrap: wrap; /* Stack elements on smaller screens */
-    margin-top: 20px;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    gap: 15px; /* Reduce space between boxes */
+    margin-top: 10px;
+    width: 90%; /* Fit within mobile screen width */
+    max-width: 600px; /* Constrain width on larger screens */
 }
 
 /* Album Info Box */
 #album-info {
-    flex: 1;
-    max-width: 300px;
-    min-height: 400px;
+    width: 100%; /* Ensure full width on mobile */
+    min-height: 300px; /* Reduce height for better balance */
     padding: 20px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -67,8 +69,7 @@ button:hover {
 
 /* Listen Info Box */
 #listen-info {
-    flex: 1;
-    max-width: 300px;
+    width: 100%; /* Match width of album info box */
     padding: 20px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -80,7 +81,7 @@ button:hover {
 }
 
 #listen-info h3 {
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
@@ -92,30 +93,33 @@ button:hover {
 }
 
 #links-list li {
-    margin: 10px 0;
-    font-size: 1em;
+    margin: 8px 0;
+    font-size: 0.95em;
     word-wrap: break-word;
 }
 
-/* Responsive Design for Smaller Screens */
-@media screen and (max-width: 768px) {
+/* Extra Small Screens */
+@media screen and (max-width: 480px) {
     h1 {
-        font-size: 2em;
+        font-size: 1.8em;
+        margin-bottom: 10px;
     }
 
     button {
         font-size: 1em;
-        padding: 12px 24px;
-    }
-
-    #content {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center;
+        padding: 10px 16px;
     }
 
     #album-info, #listen-info {
-        max-width: 100%;
-        min-height: auto;
-        margin-bottom: 20px; /* Add spacing between stacked elements */
+        min-height: 250px; /* Further reduce height for small screens */
+        padding: 15px;
+    }
+
+    #listen-info h3 {
+        font-size: 1.1em;
+    }
+
+    #links-list li {
+        font-size: 0.9em;
     }
 }
