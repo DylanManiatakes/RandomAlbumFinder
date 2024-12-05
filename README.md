@@ -3,7 +3,6 @@
 
 Discover random music albums with streaming links and a sleek, modern interface! This app fetches album data from MusicBrainz, provides fallback links to Spotify, YouTube, and Apple Music, and is built as a Progressive Web App (PWA) for easy access on any device.
 
-![App Preview](static/icons/icon-512x512.png)
 
 ## Features
 - Fetch random albums and artist details.
@@ -15,7 +14,7 @@ Discover random music albums with streaming links and a sleek, modern interface!
 
 ## 🚀 Deployment
 
-### Local Development
+### Local Deploypment
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/RandomAlbumFinder.git
@@ -24,7 +23,7 @@ Discover random music albums with streaming links and a sleek, modern interface!
 
 2. Install dependencies:
    ```bash
-   pip install flask requests
+   pip install -r Requirements.txt
    ```
 
 3. Run the app:
