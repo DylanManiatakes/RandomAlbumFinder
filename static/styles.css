@@ -98,7 +98,7 @@ button:hover {
     word-wrap: break-word;
 }
 
-/* Extra Small Screens */
+/* Extra Small Screens for extra small hands*/ 
 @media screen and (max-width: 480px) {
     h1 {
         font-size: 1.8em;
